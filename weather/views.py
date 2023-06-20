@@ -11,7 +11,8 @@ def index(request):
         city=request.POST['city']
         if str(city)!='':
             try:
-                res=urllib.request.urlopen(f'https://api.openweathermap.org/data/2.5/weather?q={str(city)}&APPID=0cc67c653737634e577f30d9ea84a33f').read()
+                #Add your key in APPID section
+                res=urllib.request.urlopen(f'https://api.openweathermap.org/data/2.5/weather?q={str(city)}&APPID=').read()
                 json_data=json.loads(res)
                 data={
                     'country_code':str(json_data['sys']['country']),
